@@ -5,14 +5,23 @@ class UberX extends Car {
     
     public $brand;
     public $model;
+    protected $passenger;
 
-    public function __construct($license, $driver, $brand, $model/* , $passenger */)
+    public function __construct($license, $driver, $brand, $model)
     {
         parent::__construct($license, $driver);
-        // $this->id = $id;
+
         $this->brand = $brand;
         $this->model = $model;
-        // $this->passenger = $passenger;
+
+    }
+
+    public function setPassenger($passenger) {
+        if ($passenger == 4) {
+            $this->passenger = $passenger;
+        } else {
+            echo "Necesitas asignar 6 pasajeros";
+        }
     }
 }
 
